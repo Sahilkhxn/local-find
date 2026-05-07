@@ -57,14 +57,14 @@ def notify_user(user_phone, shop_name, item_name, price, distance_km, request_id
         f"*Item:* {item_name}\n"
         f"*Price:* ₹{int(price)}\n"
         f"*Distance:* {distance_km} km away\n\n"
-        f"Visit http://localhost:5000/search to see all responses! 🛒"
+        f"Visit http://localhost:5000/search to see all responses! "
     )
     send_whatsapp(user_phone, message)
 
 
 def handle_incoming_message(from_number, body):
     from db.schema import get_db
-    print("🔴 HANDLE CALLED!")
+    print("HANDLE CALLED! ok ")
     
     phone = from_number.replace('whatsapp:+', '').replace('whatsapp: ', '').replace('+', '').strip()
     print(f"🔍 Phone: '{phone}'")

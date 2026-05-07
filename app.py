@@ -16,8 +16,6 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 from db.schema import init_db, get_db
 
-
-
 app = Flask(__name__, static_folder='.', static_url_path='')
 app.config['JSON_AS_ASCII'] = False
 
@@ -72,14 +70,14 @@ def search():
 
 @app.errorhandler(404)
 def not_found(e):
-    return jsonify({'ok': False, 'error': 'Route nahi mili'}), 404
+    return jsonify({'ok': False, 'error': ' we cannot find Route '}), 404
 
 @app.errorhandler(500)
 def server_error(e):
-    return jsonify({'ok': False, 'error': 'Server error hua'}), 500
+    return jsonify({'ok': False, 'error': 'Server error '}), 500
 
 if __name__ == '__main__':
-    print("🚀 LocalFind Backend shuru ho raha hai...")
+    print("🚀 LocalFind Backend ")
     init_db()
     port = int(os.getenv('PORT', 5000))
     print(f"✅ Server chal raha hai → http://localhost:{port}")

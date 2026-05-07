@@ -9,7 +9,7 @@ def whatsapp_webhook():
     body = request.form.get('Body', '')
 
     print(f"📩 Message from {from_number}: {body}", flush=True)
-
+    print("WEBHOOK HIT!", flush=True)
     reply = handle_incoming_message(from_number, body)
 
     print(f"📤 Reply: {reply}", flush=True)
