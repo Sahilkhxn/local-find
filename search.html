@@ -60,7 +60,6 @@
   }
   .back-link:hover { color: var(--ink); }
 
-  /* SEARCH HERO */
   .search-hero {
     background: var(--ink);
     color: white;
@@ -125,7 +124,6 @@
 
   .search-btn:hover { background: var(--saffron-dark); }
 
-  /* LOCATION BAR */
   .location-bar {
     max-width: 640px;
     margin: 16px auto 0;
@@ -146,36 +144,8 @@
     padding: 6px 14px;
     font-size: 13px;
     color: rgba(255,255,255,0.8);
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .location-chip:hover { background: rgba(255,255,255,0.18); }
-
-  .radius-btns {
-    display: flex;
-    gap: 6px;
   }
 
-  .r-btn {
-    padding: 6px 12px;
-    border-radius: 50px;
-    border: 1px solid rgba(255,255,255,0.2);
-    background: transparent;
-    color: rgba(255,255,255,0.6);
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-family: 'Hind', sans-serif;
-  }
-
-  .r-btn.active, .r-btn:hover {
-    background: var(--saffron);
-    border-color: var(--saffron);
-    color: white;
-  }
-
-  /* CATEGORIES */
   .categories-bar {
     padding: 20px 40px;
     display: flex;
@@ -211,14 +181,12 @@
     background: #fff7ed;
   }
 
-  /* MAIN CONTENT */
   .content-wrap {
     max-width: 1100px;
     margin: 0 auto;
     padding: 32px 40px;
   }
 
-  /* INITIAL STATE */
   .empty-state {
     text-align: center;
     padding: 80px 20px;
@@ -240,7 +208,6 @@
     line-height: 1.7;
   }
 
-  /* LOADING */
   .loading-state {
     display: none;
     text-align: center;
@@ -282,7 +249,6 @@
 
   .loading-state p { color: var(--muted); font-size: 14px; }
 
-  /* RESULTS */
   .results-state { display: none; }
   .results-state.show { display: block; }
 
@@ -304,23 +270,21 @@
 
   .results-count span { color: var(--saffron); }
 
-  .sort-select {
-    padding: 8px 14px;
-    border: 1.5px solid var(--border);
-    border-radius: 50px;
-    font-family: 'Hind', sans-serif;
-    font-size: 13px;
-    color: var(--ink);
-    background: white;
-    outline: none;
-    cursor: pointer;
+  .no-results {
+    text-align: center;
+    padding: 60px 20px;
   }
 
-  /* SHOP CARDS */
-  .shops-grid {
-    display: grid;
-    gap: 16px;
+  .no-results h3 {
+    font-family: 'Baloo 2', cursive;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
   }
+
+  .no-results p { color: var(--muted); font-size: 15px; }
+
+  .shops-grid { display: grid; gap: 16px; }
 
   .shop-card {
     background: white;
@@ -345,12 +309,6 @@
     box-shadow: 0 8px 32px rgba(249,115,22,0.1);
     transform: translateY(-2px);
   }
-
-  .shop-card:nth-child(1) { animation-delay: 0.05s; }
-  .shop-card:nth-child(2) { animation-delay: 0.1s; }
-  .shop-card:nth-child(3) { animation-delay: 0.15s; }
-
-  
 
   .shop-top {
     display: flex;
@@ -377,6 +335,7 @@
     font-weight: 700;
     color: var(--ink);
     line-height: 1.2;
+    text-transform: capitalize;
   }
 
   .shop-meta {
@@ -389,12 +348,7 @@
     flex-wrap: wrap;
   }
 
-  .meta-chip {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-
+  .meta-chip { display: flex; align-items: center; gap: 4px; }
   .stars { color: #f59e0b; }
 
   .available-badge {
@@ -405,84 +359,19 @@
     border-radius: 50px;
     font-size: 12px;
     font-weight: 700;
-  }
-
-  .badge-available {
     background: var(--green-light);
     color: var(--green);
   }
 
-  .badge-checking {
-    background: #fef9c3;
-    color: #854d0e;
-  }
+  .shop-right { text-align: right; min-width: 160px; }
 
-  /* PRICE (blurred until order) */
-  .shop-right {
-    text-align: right;
-    min-width: 160px;
-  }
-
-  .price-wrap {
-    margin-bottom: 14px;
-  }
-
-  .price-label {
-    font-size: 11px;
-    font-weight: 600;
+  .shop-address {
+    font-size: 13px;
     color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 4px;
+    margin-top: 6px;
+    line-height: 1.5;
   }
 
-  .price-value {
-    font-family: 'Baloo 2', cursive;
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--ink);
-    filter: blur(6px);
-    user-select: none;
-    transition: filter 0.4s;
-  }
-
-  .price-value.revealed { filter: none; }
-
-  .price-hint {
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 3px;
-  }
-
-  .order-btn {
-    background: #128c7e;
-    color: white;
-    border: none;
-    border-radius: 14px;
-    padding: 11px 20px;
-    font-family: 'Hind', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    white-space: nowrap;
-  }
-
-  .order-btn:hover {
-    background: #0f7568;
-    transform: translateY(-1px);
-  }
-
-  .order-btn.checking {
-    background: var(--border);
-    color: var(--muted);
-    cursor: default;
-  }
-
-  /* TAG CHIPS on card */
   .shop-tags {
     display: flex;
     gap: 8px;
@@ -496,143 +385,52 @@
     border-radius: 50px;
     font-size: 11px;
     color: var(--muted);
+    text-transform: capitalize;
   }
 
-  /* ORDER MODAL */
-  .modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(26,18,8,0.6);
-    z-index: 200;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .modal-overlay.show { display: flex; }
-
-  .modal {
-    background: white;
-    border-radius: 24px;
-    padding: 36px;
-    max-width: 440px;
-    width: 90%;
-    animation: modalIn 0.3s ease;
-  }
-
-  @keyframes modalIn {
-    from { opacity: 0; transform: scale(0.92) translateY(20px); }
-    to { opacity: 1; transform: scale(1) translateY(0); }
-  }
-
-  .modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-
-  .modal-header h3 {
-    font-family: 'Baloo 2', cursive;
-    font-size: 20px;
-    font-weight: 700;
-  }
-
-  .modal-close {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: none;
-    background: #f5f5f0;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .modal-shop-info {
-    background: #f9f6f0;
-    border-radius: 14px;
-    padding: 16px;
-    margin-bottom: 20px;
-  }
-
-  .modal-shop-name {
-    font-family: 'Baloo 2', cursive;
-    font-size: 17px;
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
-
-  .modal-shop-meta { font-size: 13px; color: var(--muted); }
-
-  .price-reveal-box {
-    background: var(--green-light);
-    border-radius: 14px;
-    padding: 18px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .price-reveal-label {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--green);
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-
-  .price-reveal-value {
-    font-family: 'Baloo 2', cursive;
-    font-size: 36px;
-    font-weight: 800;
-    color: var(--ink);
-  }
-
-  .modal-note {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.7;
-    margin-bottom: 20px;
-  }
-
-  .wa-order-btn {
-    width: 100%;
-    background: #128c7e;
+  .wa-btn {
+    background: #25D366;
     color: white;
     border: none;
     border-radius: 14px;
-    padding: 15px;
+    padding: 12px 20px;
     font-family: 'Hind', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s;
     display: flex;
     align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    text-decoration: none;
+    margin-top: 12px;
+  }
+
+  .wa-btn:hover {
+    background: #1da851;
+    transform: translateY(-1px);
+  }
+
+  /* Floating WhatsApp Button */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    background: #25D366;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 10px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    text-decoration: none;
+    transition: transform 0.2s;
   }
 
-  .wa-order-btn:hover { background: #0f7568; }
-
-  .modal-cancel {
-    width: 100%;
-    background: transparent;
-    border: 1.5px solid var(--border);
-    border-radius: 14px;
-    padding: 12px;
-    font-family: 'Hind', sans-serif;
-    font-size: 14px;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  .modal-cancel:hover { border-color: var(--muted); color: var(--ink); }
+  .whatsapp-float:hover { transform: scale(1.1); }
 
   @media (max-width: 768px) {
     nav { padding: 14px 20px; }
@@ -652,28 +450,21 @@
   <a href="index.html" class="back-link">← Home</a>
 </nav>
 
-<!-- SEARCH HERO -->
 <div class="search-hero">
   <h1>What Do You <span>Need?</span></h1>
-  <p>Nearby shops will respond instantly — what's available and the price</p>
+  <p>Nearby shops will respond instantly</p>
 
   <div class="search-box">
     <span class="search-icon">🔍</span>
-    <input type="text" id="searchInput" placeholder="Sony headphones, Samsung mobile, saree, medicine..." />
+    <input type="text" id="searchInput" placeholder="mobile, saree, medicine, electronics..." />
     <button class="search-btn" onclick="doSearch()">Search →</button>
   </div>
 
   <div class="location-bar">
-    <div class="location-chip">📍 Jaipur, Rajasthan ▾</div>
-    <div class="radius-btns">
-      <button class="r-btn" onclick="setRadius(this, 2)">2 km</button>
-      <button class="r-btn active" onclick="setRadius(this, 5)">5 km</button>
-      <button class="r-btn" onclick="setRadius(this, 10)">10 km</button>
-    </div>
+    <div class="location-chip">📍 Jaipur, Rajasthan</div>
   </div>
 </div>
 
-<!-- CATEGORIES -->
 <div class="categories-bar">
   <button class="cat-btn active" onclick="filterCat(this,'all')">🏪 All</button>
   <button class="cat-btn" onclick="filterCat(this,'electronics')">📱 Electronics</button>
@@ -684,140 +475,78 @@
   <button class="cat-btn" onclick="filterCat(this,'furniture')">🪑 Furniture</button>
 </div>
 
-<!-- MAIN CONTENT -->
 <div class="content-wrap">
 
-  <!-- Empty state -->
   <div class="empty-state" id="emptyState">
     <div class="empty-icon">🔍</div>
-    <h3>Search Something</h3>
-    <p>Type what you need above.<br>Nearby shops will respond instantly.</p>
+    <h3>Kya Dhundh Rahe Ho?</h3>
+    <p>Upar search karein — nearby shops turant reply karenge.</p>
   </div>
 
-  <!-- Loading state -->
   <div class="loading-state" id="loadingState">
     <div class="loading-pulse">
       <div class="pulse-dot"></div>
       <div class="pulse-dot"></div>
       <div class="pulse-dot"></div>
     </div>
-    <h3>Searching nearby shops...</h3>
-    <p id="loadingMsg">Sending notifications to registered shops within 5km</p>
+    <h3>Shops dhundh rahe hain...</h3>
+    <p id="loadingMsg">Jaipur ke registered shops check ho rahe hain</p>
   </div>
 
-  <!-- Results -->
   <div class="results-state" id="resultsState">
     <div class="results-header">
-      <div class="results-count" id="resultsCount">
-        <span>3</span> shops responded
-      </div>
-      <select class="sort-select" onchange="sortResults(this.value)">
-        <option value="distance">Sort by Distance</option>
-        <option value="price">Sort by Price</option>
-        <option value="rating">Sort by Rating</option>
-      </select>
+      <div class="results-count" id="resultsCount"><span>0</span> shops mili</div>
     </div>
     <div class="shops-grid" id="shopsGrid"></div>
   </div>
 
 </div>
 
-<!-- ORDER MODAL -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-  <div class="modal">
-    <div class="modal-header">
-      <h3>Confirm Order</h3>
-      <button class="modal-close" onclick="closeModal()">✕</button>
-    </div>
-
-    <div class="modal-shop-info">
-      <div class="modal-shop-name" id="modalShopName">Sharma Electronics</div>
-      <div class="modal-shop-meta" id="modalShopMeta">📍 0.4 km • ⭐ 4.8</div>
-    </div>
-
-    <div class="price-reveal-box">
-      <div class="price-reveal-label">✓ Your Price</div>
-      <div class="price-reveal-value" id="modalPrice">₹28,500</div>
-    </div>
-
-    <p class="modal-note">
-      After sending order on WhatsApp, shop will confirm item availability. Then you can visit or arrange delivery.
-    </p>
-
-    <button class="wa-order-btn" onclick="sendWAOrder()">
-      💬 Send Order on WhatsApp
-    </button>
-    <button class="modal-cancel" onclick="closeModal()">Not now</button>
-  </div>
-</div>
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/918209914101" target="_blank" class="whatsapp-float" title="Humse baat karein">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.845L.057 23.571a.75.75 0 0 0 .906.94l5.934-1.56A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.73 9.73 0 0 1-4.964-1.355l-.356-.212-3.681.968.984-3.595-.232-.37A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+  </svg>
+</a>
 
 <script>
-  const sampleShops = [
-    {
-      id: 1,
-      name: 'Sharma Electronics',
-      avatar: '📱',
-      dist: 0.4,
-      rating: 4.8,
-      reviews: 342,
-      status: 'available',
-      price: '₹28,500',
-      tags: ['Warranty available', 'Home delivery', 'EMI'],
-      wa: '919XXXXXXXXX',
-    },
-    {
-      id: 2,
-      name: 'City Sound Store',
-      avatar: '🎧',
-      dist: 1.2,
-      rating: 4.5,
-      reviews: 187,
-      status: 'available',
-      price: '₹27,800',
-      tags: ['Exchange offer', 'Free demo'],
-      wa: '919XXXXXXXXX',
-    },
-    {
-      id: 3,
-      name: 'Rajput Audio World',
-      avatar: '🔊',
-      dist: 2.1,
-      rating: 4.3,
-      reviews: 94,
-      status: 'checking',
-      price: '₹29,200',
-      tags: ['Pan India delivery'],
-      wa: '919XXXXXXXXX',
-    },
-  ];
-
-  let currentShops = [...sampleShops];
-  let selectedShop = null;
   let searchQuery = '';
+  let activeCat = 'all';
+
+  const categoryEmojis = {
+    electronics: '📱', kirana: '🛒', kapde: '👕',
+    dawai: '💊', jewellery: '💍', furniture: '🪑',
+    default: '🏪'
+  };
+
+  function getCatEmoji(category) {
+    if (!category) return '🏪';
+    const cat = category.toLowerCase();
+    for (const key in categoryEmojis) {
+      if (cat.includes(key)) return categoryEmojis[key];
+    }
+    return '🏪';
+  }
 
   function doSearch() {
     searchQuery = document.getElementById('searchInput').value.trim();
     if (!searchQuery) return;
-
     showLoading();
 
-    const msgs = [
-      `"${searchQuery}" ke liye 5km ke andar dukaans dhundh raha hoon`,
-      '8 registered shops ko WhatsApp notification bheja...',
-      '3 shops ne respond kiya!'
-    ];
+    let url = `/api/shops/search?q=${encodeURIComponent(searchQuery)}&city=jaipur`;
+    if (activeCat !== 'all') url += `&cat=${encodeURIComponent(activeCat)}`;
 
-    let i = 0;
-    document.getElementById('loadingMsg').textContent = msgs[0];
-    const timer = setInterval(() => {
-      i++;
-      if (i < msgs.length) {
-        document.getElementById('loadingMsg').textContent = msgs[i];
-      } else {
-        clearInterval(timer);
-        showResults();
-      }
-    }, 1200);
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        if (data.ok && data.data && data.data.shops && data.data.shops.length > 0) {
+          renderShops(data.data.shops);
+        } else {
+          renderEmpty();
+        }
+      })
+      .catch(() => renderEmpty());
   }
 
   function showLoading() {
@@ -826,117 +555,85 @@
     document.getElementById('loadingState').classList.add('show');
   }
 
-  function showResults() {
+  function renderShops(shops) {
     document.getElementById('loadingState').classList.remove('show');
     document.getElementById('resultsState').classList.add('show');
-    renderShops(currentShops);
-  }
+    document.getElementById('resultsCount').innerHTML = `<span>${shops.length}</span> shop${shops.length > 1 ? 's' : ''} mili`;
 
-  function renderShops(shops) {
-    document.getElementById('resultsCount').innerHTML = `<span>${shops.filter(s=>s.status==='available').length}</span> shops ne respond kiya`;
     const grid = document.getElementById('shopsGrid');
     grid.innerHTML = '';
+
     shops.forEach((shop, idx) => {
-      grid.innerHTML += shopCardHTML(shop, idx);
+      const emoji = getCatEmoji(shop.category);
+      const waMsg = encodeURIComponent(`Namaste! Main LocalFind se aa raha hoon.\n\nMujhe chahiye: ${searchQuery}\nKya yeh available hai?`);
+      const waLink = `https://wa.me/${shop.wa_primary}?text=${waMsg}`;
+      const tags = [shop.category, shop.area].filter(Boolean);
+      const stars = '★'.repeat(Math.round(shop.rating || 4)) + '☆'.repeat(5 - Math.round(shop.rating || 4));
+
+      grid.innerHTML += `
+        <div class="shop-card" style="animation-delay:${idx * 0.06}s">
+          <div class="shop-main">
+            <div class="shop-top">
+              <div class="shop-avatar">${emoji}</div>
+              <div>
+                <div class="shop-name">${shop.shop_name}</div>
+                <div class="shop-meta">
+                  <span class="meta-chip"><span class="stars">${stars}</span> ${shop.rating || '4.0'}</span>
+                  <span class="meta-chip">${shop.total_reviews || 0} reviews</span>
+                  <span class="available-badge">✓ Available</span>
+                </div>
+                <div class="shop-address">📍 ${shop.address || shop.area || 'Jaipur'}</div>
+              </div>
+            </div>
+            <div class="shop-tags">
+              ${tags.map(t => `<span class="tag-chip">${t}</span>`).join('')}
+            </div>
+          </div>
+
+          <div class="shop-right">
+            <a class="wa-btn" href="${waLink}" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.845L.057 23.571a.75.75 0 0 0 .906.94l5.934-1.56A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.73 9.73 0 0 1-4.964-1.355l-.356-.212-3.681.968.984-3.595-.232-.37A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+              </svg>
+              WhatsApp Karo
+            </a>
+          </div>
+        </div>`;
     });
   }
 
-  function shopCardHTML(s, idx) {
-    const delay = idx * 0.06;
-    const isAvail = s.status === 'available';
-
-    return `
-    <div class="shop-card" style="animation-delay:${delay}s">
-      <div class="shop-main">
-        <div class="shop-top">
-          <div class="shop-avatar">${s.avatar}</div>
-          <div>
-            <div class="shop-name">${s.name}</div>
-            <div class="shop-meta">
-              <span class="meta-chip">📍 ${s.dist} km</span>
-              <span class="meta-chip"><span class="stars">★</span> ${s.rating}</span>
-              <span class="meta-chip">${s.reviews} reviews</span>
-              <span class="available-badge ${isAvail ? 'badge-available' : 'badge-checking'}">
-                ${isAvail ? '✓ Available' : '⏳ Checking...'}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="shop-tags">
-          ${s.tags.map(t => `<span class="tag-chip">${t}</span>`).join('')}
-        </div>
-      </div>
-
-      <div class="shop-right">
-        ${isAvail ? `
-        <div class="price-wrap">
-          <div class="price-label">Price</div>
-          <div class="price-value" id="price-${s.id}">${s.price}</div>
-          <div class="price-hint">Order karne par dikhega</div>
-        </div>
-        <button class="order-btn" onclick="openModal(${s.id})">
-          💬 Order Karo
-        </button>` : `
-        <div class="price-wrap">
-          <div class="price-label">Status</div>
-          <div style="font-size:14px;color:var(--muted);margin-top:6px;">Jabab aa raha hai...</div>
-        </div>
-        <button class="order-btn checking" disabled>⏳ Wait Karo</button>`}
-      </div>
-    </div>`;
-  }
-
-  function openModal(id) {
-    selectedShop = sampleShops.find(s => s.id === id);
-    document.getElementById('modalShopName').textContent = selectedShop.name;
-    document.getElementById('modalShopMeta').textContent = `📍 ${selectedShop.dist} km • ⭐ ${selectedShop.rating}`;
-    document.getElementById('modalPrice').textContent = selectedShop.price;
-
-    // Reveal price on card too
-    const priceEl = document.getElementById('price-' + id);
-    if (priceEl) priceEl.classList.add('revealed');
-
-    document.getElementById('modalOverlay').classList.add('show');
-  }
-
-  function closeModal(e) {
-    if (!e || e.target === document.getElementById('modalOverlay')) {
-      document.getElementById('modalOverlay').classList.remove('show');
-    }
-  }
-
-  function sendWAOrder() {
-    if (!selectedShop) return;
-    const msg = encodeURIComponent(
-      `Namaste! Main LocalFind se aa raha hoon.\n\nMujhe chahiye: ${searchQuery || 'Item'}\nPrice jo tumne quote kiya: ${selectedShop.price}\n\nKya yeh available hai? Main aane wala hoon.`
-    );
-    window.open(`https://wa.me/${selectedShop.wa}?text=${msg}`, '_blank');
-    closeModal();
-  }
-
-  function setRadius(btn, r) {
-    document.querySelectorAll('.r-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+  function renderEmpty() {
+    document.getElementById('loadingState').classList.remove('show');
+    document.getElementById('resultsState').classList.add('show');
+    document.getElementById('resultsCount').innerHTML = `<span>0</span> shops mili`;
+    document.getElementById('shopsGrid').innerHTML = `
+      <div class="no-results">
+        <div style="font-size:48px;margin-bottom:16px;">😕</div>
+        <h3>"${searchQuery}" ke liye koi shop nahi mili</h3>
+        <p>Koi aur word try karein ya category change karein.</p>
+      </div>`;
   }
 
   function filterCat(btn, cat) {
     document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+    activeCat = cat;
+    if (searchQuery) doSearch();
   }
 
-  function sortResults(by) {
-    const sorted = [...currentShops].sort((a, b) => {
-      if (by === 'distance') return a.dist - b.dist;
-      if (by === 'price') return parseInt(a.price.replace(/\D/g,'')) - parseInt(b.price.replace(/\D/g,''));
-      if (by === 'rating') return b.rating - a.rating;
-    });
-    renderShops(sorted);
-  }
-
-  // Enter key search
   document.getElementById('searchInput').addEventListener('keydown', e => {
     if (e.key === 'Enter') doSearch();
   });
+
+  // Auto-search if URL has query param
+  const urlParams = new URLSearchParams(window.location.search);
+  const q = urlParams.get('q');
+  if (q) {
+    document.getElementById('searchInput').value = q;
+    searchQuery = q;
+    doSearch();
+  }
 </script>
 
 </body>

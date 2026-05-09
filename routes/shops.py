@@ -399,3 +399,32 @@ def get_response_history():
         return success({'responses': [dict(r) for r in rows], 'count': len(rows)})
     finally:
         db.close()
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SEARCH SHOPS
+# ══════════════════════════════════════════════════════════════════════════════
+
+@shops_bp.route('/search', methods=['GET'])
+def search_shops():
+    q    = request.args.get('q', '').strip()
+    city = request.args.get('city', 'jaipur').lower()
+
+    if not q:
+        return error('Search query zaruri hai', 422)
+
+    db = get_db()
+    try:
+        rows = db.execute("""
+            SELECT id, shop_name, category, description,
+                   address, area, rating, total_reviews, wa_primary
+            FROM shops
+            WHERE is_active=1
+              AND city=?
+              AND (category LIKE ? OR shop_name LIKE ? OR description LIKE ?)
+            LIMIT 10
+        """, (city, f'%{q}%', f'%{q}%', f'%{q}%')).fetchall()
+
+        shops = [dict(r) for r in rows]
+        return success({'shops': shops, 'count': len(shops)})
+    finally:
+        db.close()        
