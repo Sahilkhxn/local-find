@@ -130,10 +130,10 @@ def server_error(e):
     return jsonify({'ok': False, 'error': 'Server error '}), 500
 
 if __name__ == '__main__':
-    print("🚀 LocalFind Backend ")
+    print("LocalFind Backend ")
     init_db()
     port = int(os.getenv('PORT', 5000))
-    print(f"✅ Server chal raha hai → http://localhost:{port}")
-    print(f"❤️  Health → http://localhost:{port}/api/health")
+    print(f"Server is running http://localhost:{port}")
+    print(f"  Health → http://localhost:{port}/api/health")
     print("─" * 50)
     app.run(host='0.0.0.0', port=port, debug=True)
