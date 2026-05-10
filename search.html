@@ -43,21 +43,9 @@
     z-index: 100;
   }
 
-  .logo {
-    font-family: 'Baloo 2', cursive;
-    font-weight: 800;
-    font-size: 24px;
-    color: var(--ink);
-    text-decoration: none;
-  }
+  .logo { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 24px; color: var(--ink); text-decoration: none; }
   .logo-dot { color: var(--saffron); }
-
-  .back-link {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-  }
+  .back-link { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; }
   .back-link:hover { color: var(--ink); }
 
   .search-hero {
@@ -67,20 +55,9 @@
     text-align: center;
   }
 
-  .search-hero h1 {
-    font-family: 'Baloo 2', cursive;
-    font-size: 36px;
-    font-weight: 800;
-    margin-bottom: 8px;
-  }
-
+  .search-hero h1 { font-family: 'Baloo 2', cursive; font-size: 36px; font-weight: 800; margin-bottom: 8px; }
   .search-hero h1 span { color: var(--saffron); }
-
-  .search-hero p {
-    color: rgba(255,255,255,0.5);
-    font-size: 15px;
-    margin-bottom: 32px;
-  }
+  .search-hero p { color: rgba(255,255,255,0.5); font-size: 15px; margin-bottom: 32px; }
 
   .search-box {
     max-width: 640px;
@@ -144,7 +121,11 @@
     padding: 6px 14px;
     font-size: 13px;
     color: rgba(255,255,255,0.8);
+    cursor: pointer;
+    transition: all 0.2s;
   }
+
+  .location-chip:hover { background: rgba(255,255,255,0.2); }
 
   .categories-bar {
     padding: 20px 40px;
@@ -187,45 +168,18 @@
     padding: 32px 40px;
   }
 
-  .empty-state {
-    text-align: center;
-    padding: 80px 20px;
-  }
-
+  .empty-state { text-align: center; padding: 80px 20px; }
   .empty-icon { font-size: 56px; margin-bottom: 20px; }
+  .empty-state h3 { font-family: 'Baloo 2', cursive; font-size: 24px; font-weight: 700; margin-bottom: 10px; color: var(--ink); }
+  .empty-state p { color: var(--muted); font-size: 15px; line-height: 1.7; }
 
-  .empty-state h3 {
-    font-family: 'Baloo 2', cursive;
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: var(--ink);
-  }
-
-  .empty-state p {
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  .loading-state {
-    display: none;
-    text-align: center;
-    padding: 60px 20px;
-  }
-
+  .loading-state { display: none; text-align: center; padding: 60px 20px; }
   .loading-state.show { display: block; }
 
-  .loading-pulse {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
+  .loading-pulse { display: flex; justify-content: center; gap: 8px; margin-bottom: 24px; }
 
   .pulse-dot {
-    width: 10px;
-    height: 10px;
+    width: 10px; height: 10px;
     background: var(--saffron);
     border-radius: 50%;
     animation: pulseDot 1.2s ease-in-out infinite;
@@ -239,14 +193,7 @@
     50% { transform: scale(1); opacity: 1; }
   }
 
-  .loading-state h3 {
-    font-family: 'Baloo 2', cursive;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 8px;
-  }
-
+  .loading-state h3 { font-family: 'Baloo 2', cursive; font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
   .loading-state p { color: var(--muted); font-size: 14px; }
 
   .results-state { display: none; }
@@ -261,27 +208,11 @@
     gap: 12px;
   }
 
-  .results-count {
-    font-family: 'Baloo 2', cursive;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--ink);
-  }
-
+  .results-count { font-family: 'Baloo 2', cursive; font-size: 16px; font-weight: 700; color: var(--ink); }
   .results-count span { color: var(--saffron); }
 
-  .no-results {
-    text-align: center;
-    padding: 60px 20px;
-  }
-
-  .no-results h3 {
-    font-family: 'Baloo 2', cursive;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-
+  .no-results { text-align: center; padding: 60px 20px; }
+  .no-results h3 { font-family: 'Baloo 2', cursive; font-size: 22px; font-weight: 700; margin-bottom: 10px; }
   .no-results p { color: var(--muted); font-size: 15px; }
 
   .shops-grid { display: grid; gap: 16px; }
@@ -310,74 +241,41 @@
     transform: translateY(-2px);
   }
 
-  .shop-top {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    margin-bottom: 14px;
-  }
+  .shop-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
 
   .shop-avatar {
-    width: 48px;
-    height: 48px;
+    width: 48px; height: 48px;
     border-radius: 14px;
     background: var(--saffron-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
   }
 
-  .shop-name {
-    font-family: 'Baloo 2', cursive;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--ink);
-    line-height: 1.2;
-    text-transform: capitalize;
-  }
+  .shop-name { font-family: 'Baloo 2', cursive; font-size: 20px; font-weight: 700; color: var(--ink); line-height: 1.2; text-transform: capitalize; }
 
-  .shop-meta {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    font-size: 13px;
-    color: var(--muted);
-    margin-top: 4px;
-    flex-wrap: wrap;
-  }
-
+  .shop-meta { display: flex; align-items: center; gap: 14px; font-size: 13px; color: var(--muted); margin-top: 4px; flex-wrap: wrap; }
   .meta-chip { display: flex; align-items: center; gap: 4px; }
   .stars { color: #f59e0b; }
 
   .available-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 5px 14px;
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 700;
-    background: var(--green-light);
-    color: var(--green);
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 50px;
+    font-size: 12px; font-weight: 700;
+    background: var(--green-light); color: var(--green);
+  }
+
+  .same-city-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 4px 10px; border-radius: 50px;
+    font-size: 11px; font-weight: 700;
+    background: #fff7ed; color: var(--saffron);
+    border: 1px solid var(--saffron-light);
   }
 
   .shop-right { text-align: right; min-width: 160px; }
+  .shop-address { font-size: 13px; color: var(--muted); margin-top: 6px; line-height: 1.5; }
 
-  .shop-address {
-    font-size: 13px;
-    color: var(--muted);
-    margin-top: 6px;
-    line-height: 1.5;
-  }
-
-  .shop-tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-  }
+  .shop-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
 
   .tag-chip {
     padding: 4px 12px;
@@ -407,27 +305,15 @@
     margin-top: 12px;
   }
 
-  .wa-btn:hover {
-    background: #1da851;
-    transform: translateY(-1px);
-  }
+  .wa-btn:hover { background: #1da851; transform: translateY(-1px); }
 
-  /* Floating WhatsApp Button */
   .whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 9999;
-    background: #25D366;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: fixed; bottom: 30px; right: 30px; z-index: 9999;
+    background: #25D366; border-radius: 50%;
+    width: 60px; height: 60px;
+    display: flex; align-items: center; justify-content: center;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    text-decoration: none;
-    transition: transform 0.2s;
+    text-decoration: none; transition: transform 0.2s;
   }
 
   .whatsapp-float:hover { transform: scale(1.1); }
@@ -461,7 +347,7 @@
   </div>
 
   <div class="location-bar">
-    <div class="location-chip">📍 Jaipur, Rajasthan</div>
+    <div class="location-chip" id="locationChip" onclick="detectLocation()">📍 Location detect kar rahe hain...</div>
   </div>
 </div>
 
@@ -490,7 +376,7 @@
       <div class="pulse-dot"></div>
     </div>
     <h3>Shops dhundh rahe hain...</h3>
-    <p id="loadingMsg">Jaipur ke registered shops check ho rahe hain</p>
+    <p id="loadingMsg">Aapke area ke registered shops check ho rahe hain</p>
   </div>
 
   <div class="results-state" id="resultsState">
@@ -502,7 +388,6 @@
 
 </div>
 
-<!-- Floating WhatsApp -->
 <a href="https://wa.me/918209914101" target="_blank" class="whatsapp-float" title="Humse baat karein">
   <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -511,13 +396,18 @@
 </a>
 
 <script>
+  const API_BASE = window.location.port === '5500' ? 'http://127.0.0.1:5000' : '';
+
   let searchQuery = '';
-  let activeCat = 'all';
+  let activeCat   = 'all';
+  let userLat     = null;
+  let userLng     = null;
+  let userCity    = 'jaipur'; // default
 
   const categoryEmojis = {
     electronics: '📱', kirana: '🛒', kapde: '👕',
-    dawai: '💊', jewellery: '💍', furniture: '🪑',
-    default: '🏪'
+    dawai: '💊', jewellery: '💍', furniture: '🪑', food: '🍱',
+    hardware: '🔧', default: '🏪'
   };
 
   function getCatEmoji(category) {
@@ -529,31 +419,64 @@
     return '🏪';
   }
 
-function doSearch() {
+  // ── Location Detect ──────────────────────────────────────
+  async function detectLocation() {
+    document.getElementById('locationChip').textContent = '📍 Location dhundh rahe hain...';
+    if (!navigator.geolocation) {
+      document.getElementById('locationChip').textContent = '📍 Jaipur (default)';
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(
+      async (pos) => {
+        userLat = pos.coords.latitude;
+        userLng = pos.coords.longitude;
+        try {
+          const geo = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${userLat}&lon=${userLng}&format=json`);
+          const geoData = await geo.json();
+          userCity = (geoData.address.city || geoData.address.town || geoData.address.village || 'jaipur').toLowerCase();
+          document.getElementById('locationChip').textContent = `📍 ${geoData.address.city || geoData.address.town || 'Detected'}`;
+        } catch(e) {
+          document.getElementById('locationChip').textContent = '📍 Location mili';
+        }
+      },
+      () => {
+        document.getElementById('locationChip').textContent = '📍 Jaipur (default)';
+      }
+    );
+  }
+
+  // ── Search ───────────────────────────────────────────────
+  function doSearch() {
     searchQuery = document.getElementById('searchInput').value.trim();
     if (!searchQuery) return;
     showLoading();
 
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            (pos) => {
-                const lat = pos.coords.latitude;
-                const lng = pos.coords.longitude;
-                fetchShops(lat, lng);
-            },
-            () => {
-                // Location nahi mili — city se search karo
-                fetchShops(null, null);
-            }
-        );
+    if (userLat && userLng) {
+      fetchShops(userLat, userLng);
+    } else if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        async (pos) => {
+          userLat = pos.coords.latitude;
+          userLng = pos.coords.longitude;
+          try {
+            const geo = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${userLat}&lon=${userLng}&format=json`);
+            const geoData = await geo.json();
+            userCity = (geoData.address.city || geoData.address.town || geoData.address.village || 'jaipur').toLowerCase();
+            document.getElementById('locationChip').textContent = `📍 ${geoData.address.city || geoData.address.town || 'Detected'}`;
+          } catch(e) {}
+          fetchShops(userLat, userLng);
+        },
+        () => fetchShops(null, null)
+      );
     } else {
-        fetchShops(null, null);
+      fetchShops(null, null);
     }
-}
+  }
 
-function fetchShops(lat, lng) {
-const API_BASE = window.location.port === '5500' ? 'http://127.0.0.1:5000' : '';
-let url = `${API_BASE}/api/shops/search?q=${encodeURIComponent(searchQuery)}&city=jaipur&radius=10`;
+  // ── Fetch Shops ──────────────────────────────────────────
+  function fetchShops(lat, lng) {
+    // City pehle — same city ki shops upar aayengi (backend sort karega)
+    let url = `${API_BASE}/api/shops/search?q=${encodeURIComponent(searchQuery)}&city=${encodeURIComponent(userCity)}`;
     if (lat && lng) url += `&lat=${lat}&lng=${lng}`;
 
     fetch(url)
@@ -566,8 +489,9 @@ let url = `${API_BASE}/api/shops/search?q=${encodeURIComponent(searchQuery)}&cit
         }
       })
       .catch(() => renderEmpty());
-}
+  }
 
+  // ── Render ───────────────────────────────────────────────
   function showLoading() {
     document.getElementById('emptyState').style.display = 'none';
     document.getElementById('resultsState').classList.remove('show');
@@ -583,12 +507,12 @@ let url = `${API_BASE}/api/shops/search?q=${encodeURIComponent(searchQuery)}&cit
     grid.innerHTML = '';
 
     shops.forEach((shop, idx) => {
-      const emoji = getCatEmoji(shop.category);
-      const userQuery = document.getElementById('searchInput').value.trim() || searchQuery;
-      const waMsg = encodeURIComponent(`Namaste! Main LocalFind se aa raha hoon.\n\nMujhe chahiye: ${userQuery}\nKya yeh available hai?`); 
-      const waLink = `https://wa.me/${shop.wa_primary}?text=${waMsg}`;
-      const tags = [shop.category, shop.area].filter(Boolean);
-      const stars = '★'.repeat(Math.round(shop.rating || 4)) + '☆'.repeat(5 - Math.round(shop.rating || 4));
+      const emoji   = getCatEmoji(shop.category);
+      const waMsg   = encodeURIComponent(`Namaste! Main LocalFind se aa raha hoon.\n\nMujhe chahiye: ${searchQuery}\nKya yeh available hai?`);
+      const waLink  = `https://wa.me/${shop.wa_primary}?text=${waMsg}`;
+      const tags    = [shop.category, shop.area].filter(Boolean);
+      const stars   = '★'.repeat(Math.round(shop.rating || 4)) + '☆'.repeat(5 - Math.round(shop.rating || 4));
+      const isLocal = shop.city && shop.city.toLowerCase() === userCity.toLowerCase();
 
       grid.innerHTML += `
         <div class="shop-card" style="animation-delay:${idx * 0.06}s">
@@ -601,8 +525,9 @@ let url = `${API_BASE}/api/shops/search?q=${encodeURIComponent(searchQuery)}&cit
                   <span class="meta-chip"><span class="stars">${stars}</span> ${shop.rating || '4.0'}</span>
                   <span class="meta-chip">${shop.total_reviews || 0} reviews</span>
                   <span class="available-badge">✓ Available</span>
+                  ${isLocal ? '<span class="same-city-badge">📍 Aapke sheher mein</span>' : ''}
                 </div>
-                <div class="shop-address">📍 ${shop.address || shop.area || 'Jaipur'}</div>
+                <div class="shop-address">📍 ${shop.address || shop.area || shop.city || ''}</div>
               </div>
             </div>
             <div class="shop-tags">
@@ -646,13 +571,16 @@ let url = `${API_BASE}/api/shops/search?q=${encodeURIComponent(searchQuery)}&cit
     if (e.key === 'Enter') doSearch();
   });
 
-  // Auto-search if URL has query param
+  // Page load pe location detect karo
+  detectLocation();
+
+  // URL query param se auto search
   const urlParams = new URLSearchParams(window.location.search);
   const q = urlParams.get('q');
   if (q) {
     document.getElementById('searchInput').value = q;
     searchQuery = q;
-    doSearch();
+    setTimeout(() => doSearch(), 500);
   }
 </script>
 
