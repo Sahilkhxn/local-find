@@ -8,7 +8,7 @@ GET  /api/shops/requests      — see open requests near shop
 POST /api/shops/respond       — reply to a request (available/unavailable + price)
 GET  /api/shops/responses     — history of shop's responses
 """
-
+from thefuzz import process
 import json
 from flask import Blueprint, request, g
 from db.schema import get_db
@@ -406,7 +406,7 @@ def get_response_history():
 
 @shops_bp.route('/search', methods=['GET'])
 def search_shops():
-    q    = request.args.get('q', '').strip()
+    q    = request.args.get('q', '').strip().lower()
     city = request.args.get('city', 'jaipur').lower()
 
     if not q:
@@ -414,17 +414,45 @@ def search_shops():
 
     db = get_db()
     try:
-        rows = db.execute("""
-            SELECT id, shop_name, category, description,
+        # Step 1: Saare products laao
+        all_products = db.execute(
+            "SELECT DISTINCT product, category FROM category_products"
+        ).fetchall()
+
+        product_list = [r['product'].lower() for r in all_products]
+
+        # Step 2: Fuzzy match karo — 70% similarity
+        matches = process.extractBests(q, product_list, score_cutoff=70, limit=10)
+        matched_products = [m[0] for m in matches]
+
+        # Step 3: Matched products se categories nikalo
+        cat_list = []
+        if matched_products:
+            placeholders_p = ','.join('?' * len(matched_products))
+            cats = db.execute(
+                f"SELECT DISTINCT category FROM category_products WHERE LOWER(product) IN ({placeholders_p})",
+                matched_products
+            ).fetchall()
+            cat_list = [r['category'] for r in cats]
+
+        # Step 4: Shops dhundho
+        placeholders = ','.join('?' * len(cat_list)) if cat_list else None
+
+        query = f"""
+            SELECT id, shop_name, category, description, products,
                    address, area, rating, total_reviews, wa_primary
             FROM shops
-            WHERE is_active=1
-              AND city=?
-              AND (category LIKE ? OR shop_name LIKE ? OR description LIKE ?)
+            WHERE is_active=1 AND city=?
+            AND (
+                category LIKE ? OR shop_name LIKE ? OR
+                description LIKE ? OR products LIKE ?
+                {('OR category IN (' + placeholders + ')') if placeholders else ''}
+            )
             LIMIT 10
-        """, (city, f'%{q}%', f'%{q}%', f'%{q}%')).fetchall()
+        """
 
-        shops = [dict(r) for r in rows]
-        return success({'shops': shops, 'count': len(shops)})
+        params = [city, f'%{q}%', f'%{q}%', f'%{q}%', f'%{q}%'] + cat_list
+        rows = db.execute(query, params).fetchall()
+        return success({'shops': [dict(r) for r in rows], 'count': len(rows)})
     finally:
-        db.close()        
+        db.close()

@@ -62,7 +62,7 @@ def home():
 
 @app.route('/shop-register')
 def shop_register():
-    return app.send_static_file('shop_register.html')
+    return app.send_static_file('shop-register.html')
 
 @app.route('/search')
 def search():

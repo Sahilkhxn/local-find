@@ -565,7 +565,8 @@
 
     shops.forEach((shop, idx) => {
       const emoji = getCatEmoji(shop.category);
-      const waMsg = encodeURIComponent(`Namaste! Main LocalFind se aa raha hoon.\n\nMujhe chahiye: ${searchQuery}\nKya yeh available hai?`);
+      const userQuery = document.getElementById('searchInput').value.trim() || searchQuery;
+      const waMsg = encodeURIComponent(`Namaste! Main LocalFind se aa raha hoon.\n\nMujhe chahiye: ${userQuery}\nKya yeh available hai?`); 
       const waLink = `https://wa.me/${shop.wa_primary}?text=${waMsg}`;
       const tags = [shop.category, shop.area].filter(Boolean);
       const stars = '★'.repeat(Math.round(shop.rating || 4)) + '☆'.repeat(5 - Math.round(shop.rating || 4));
