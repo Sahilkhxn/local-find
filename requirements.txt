@@ -1,1 +1,3 @@
 flask
+thefuzz
+python-Levenshtein
